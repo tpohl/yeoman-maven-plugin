@@ -10,6 +10,8 @@
             <plugin>
                 <artifactId>yeoman-maven-plugin</artifactId>
                 <configuration>
+                    <nodePath>custom-node</nodePath>
+                    <npmPath>custom-npm</npmPath>
                     <npmInstallArgs>arg1</npmInstallArgs>
                     <bowerInstallArgs>arg2</bowerInstallArgs>
                     <buildTool>grunt</buildTool>

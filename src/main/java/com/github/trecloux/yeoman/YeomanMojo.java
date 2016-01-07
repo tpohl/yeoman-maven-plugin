@@ -40,6 +40,11 @@ public class YeomanMojo extends AbstractMojo {
     @Parameter( property = "yo.skip", defaultValue = "false")
     boolean skip;
 
+    @Parameter( defaultValue = "node")
+    String nodePath;
+    @Parameter( defaultValue = "npm")
+    String npmPath;
+    
     @Parameter( defaultValue = "install", required = true )
     String npmInstallArgs;
     @Parameter(defaultValue = "bower",  required = true )
@@ -81,9 +86,9 @@ public class YeomanMojo extends AbstractMojo {
     }
 
     void npmInstall() throws MojoExecutionException {
-        logToolVersion("node");
-        logToolVersion("npm");
-        logAndExecuteCommand("npm "+ npmInstallArgs);
+        logToolVersion(this.nodePath);
+        logToolVersion(this.npmPath);
+        logAndExecuteCommand(this.npmPath+" "+ npmInstallArgs);
     }
 
     void bowerInstall() throws MojoExecutionException {
